@@ -14,6 +14,9 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "paths": {
+      "@player-tools/devtools-*": ["./bazel-bin/devtools/*"]
+    }
   }
 }

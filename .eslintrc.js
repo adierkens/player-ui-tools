@@ -14,6 +14,7 @@ module.exports = {
   ],
 
   plugins: [
+    'import',
     'prettier',
     'jest',
     'react-hooks',
@@ -22,9 +23,16 @@ module.exports = {
   ],
 
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+      },
+      typescript: {
+        alwaysTryTypes: true,
+        project: '<root>tsconfig.json',
       },
     },
   },
@@ -39,6 +47,7 @@ module.exports = {
       ],
       plugins: ['@typescript-eslint', 'eslint-plugin-no-explicit-type-exports'],
       rules: {
+        'import/no-unresolved': 'error',
         '@typescript-eslint/no-empty-function': 'off',
         '@typescript-eslint/no-namespace': 'off',
         '@typescript-eslint/ban-ts-comment': 'warn',

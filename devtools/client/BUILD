@@ -3,15 +3,13 @@ load("//:index.bzl", "javascript_pipeline")
 javascript_pipeline(
     name = "@player-tools/devtools-client",
     dependencies = [
-        "@npm//@reduxjs/toolkit",
-        "//devtools/common",
+      "@npm//@player-ui/react",
+      "@npm//@player-ui/reference-assets-plugin-react",
+      "@npm//dset",
+      "@npm//immer",
+      "@npm//react",
+      "@npm//react-error-boundary",
+      "//devtools/messenger:@player-tools/devtools-messenger",
+      "//devtools/types:@player-tools/devtools-types",
     ],
-    peer_dependencies = [],
-    test_data = [],
-)
-
-alias(
-    name = "client",
-    actual = ":@player-tools/devtools-client",
-    visibility = ["//devtools:__subpackages__"],
 )
