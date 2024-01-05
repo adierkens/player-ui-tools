@@ -1,0 +1,5 @@
+{
+  "name": "@player-tools/devtools-browser-extension",
+  "version": "0.0.0-PLACEHOLDER",
+  "main": "./dist/index.js"
+}
